@@ -1,0 +1,90 @@
+%%% Magic comments for setting the correct parameters in compatible IDEs
+% !TeX encoding = utf8
+% !TeX program = pdflatex
+% !TeX spellcheck = en_US
+
+\documentclass[11pt,a4paper]{report}
+
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{4pt}
+
+%% Title page for the technical report
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/ELVIS.pdf}\\
+  \vspace{2cm}
+  {\LARGE Technical Report}\par
+  {\LARGE \bfseries [Project name]}\\
+  \vspace{1cm}
+  {\large [Author name(s)]\\\mbox{[Group X]}}\\
+  \vspace{1cm}
+  \vfill
+  {\large\textbf{Use the provided structure as a guide for documenting the completed 
+  demonstrator. Adapt the level of detail to the project while ensuring that all 
+  relevant assessment criteria are addressed.}\par}
+  \vspace{1cm}
+  \textbf{Written Technical Report (10\%)}\\
+  Deliverable: PDF \quad Due: 4 December, 23:59\par
+\end{titlepage}
+
+%% Abstract
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\chapter*{Abstract}
+
+%% Edit the abstract here: summarize the demonstrator's purpose, sensors,
+%% implementation, validation, and most important supported result.
+[In a short paragraph, state the demonstrator's purpose, the sensors used,
+the main implementation, how it was validated, and the most important result.
+Do not claim results that are not supported by the tests below.]
+
+%% Table of contents
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+%% Import each chapter from its own file.
+\include{chapters/introduction}
+\include{chapters/sensors}
+\include{chapters/implemented-prototype}
+\include{chapters/validation-methods}
+\include{chapters/results-analysis}
+\include{chapters/limitations-and-future-improvements}
+\include{chapters/conclusion}
+\include{chapters/reproducibility-materials}
+
+%% Bibliography stays in the main report file.
+\begin{thebibliography}{9}
+  \bibitem{sensor-datasheet}
+  [Manufacturer, ``Sensor datasheet title,'' document number and revision,
+  publication date. URL and access date if online.]
+
+  \bibitem{psoc-documentation}
+  [Author or manufacturer, ``PSOC/device or development documentation,''
+  version or revision, publication date. URL and access date if online.]
+
+  \bibitem{other-reference}
+  [Add references for methods, standards, or technical claims cited in the
+  report. Use a consistent citation style.]
+\end{thebibliography}
+
+\end{document}
